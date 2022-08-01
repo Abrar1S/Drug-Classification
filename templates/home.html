@@ -30,36 +30,47 @@
       background-color: #f2f2f2;
       padding: 20px;
     }
-    </style>
+</style>
 
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
     <title>Drug Classification App</title>
   </head>
+
   <body>
-    <h3 align="center">Drug Classification App</h3>
-    <div>
-    <form action="{{ url_for("classification")}}" method="post">
-        <label for="Age">Age:</label>
-        <input type="text" id="Age" name="Age" placeholder="Age">
-        <label for="Sex">Sex(Female:0,Male:1):</label>
-        <input type="text" id="Sex" name="Sex" placeholder="Sex">
-        <label for="BP">Blood Pressure(High:0,Low:1,Normal:2):</label>
-        <input type="text" id="BP" name="BP" placeholder="Blood Pressure">
-        <label for="Cholesterol">Cholesterol(High:0,Low:1):</label>
-        <input type="text" id="Cholesterol" name="Cholesterol" placeholder="Cholesterol">
-        <label for="Na_to_k">Na to potassium ratio:</label>
-        <input type="text" id="Na_to_k" name="Na_to_k" placeholder="Na_to_k">
+    <!-- <h3 align="center">Drug Classification App</h3> -->
+    <div style = "margin-top: 50px;" class="ui container">
+    <h3  class="ui center aligned header">Drug Classification App</h3>
+    
+      <form class = "ui form" action="{{ url_for("classification")}}" method="post">
+        <div class="field">
+          <label for="Age">Age:</label>
+          <input type="text" id="Age" name="Age" placeholder="Age"><br/><br/>
+          <label for="Sex">Sex(Female:0,Male:1):</label>
+          <input type="text" id="Sex" name="Sex" placeholder="Sex"><br/><br/>
+          <label for="BP">Blood Pressure(High:0,Low:1,Normal:2):</label>
+          <input type="text" id="BP" name="BP" placeholder="Blood Pressure"><br/><br/>
+          <label for="Cholesterol">Cholesterol(High:0,Low:1):</label>
+          <input type="text" id="Cholesterol" name="Cholesterol" placeholder="Cholesterol"><br/><br/>
+          <label for="Na_to_k">Na to potassium ratio:</label>
+          <input type="text" id="Na_to_k" name="Na_to_k" placeholder="Na_to_k"><br/><br/>
 
-        <button type="submit">Classify Drugs</button>
-    </div>
-    <div>
-      <!-- check if result is None or not -->
-        {% if result is not none %}
-            <h3 >Prediction says the drug is {{result}}</h3>
-        {% endif %}
+          <button class = "fluid ui teal button" type="submit">Classify Drugs</button>
+        </div>
+      </form>
+    
+      <div>
+        <!-- check if result is None or not -->
+          {% if result is not none %}
+            <h3 class="ui center aligned header">Prediction says the drug is {{result}}</h3>
+          {% endif %}
 
+      </div>
     </div>
   </body>
 </html>
