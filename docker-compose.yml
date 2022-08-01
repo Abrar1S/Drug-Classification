@@ -5,7 +5,7 @@ services:
     container_name: drug_class_app
     image: abrar1s2/drug_class_app:drugClassApp
     ports:
-      - "5000:5000"
+      - "5001:5000"
     build:
       context: .
       dockerfile: Dockerfile
