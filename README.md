@@ -1,4 +1,4 @@
-### This is a machine learning deployment project using Flask and Docker. 
+### This is a machine learning model deployment project using Flask and Docker. 
 
 ##### Step 1: Here, the purpose is to find the appropriate drug for a patient. The dataset can be found on kaggle. In order to perform drug classification, age, sex, blood pressure levels, cholesterol levels, and sodium to potassium ration have been considered as features. After taking the features, the random forest classifier algorithm is being performed, and the achieved accuracy is 98%. 
 
