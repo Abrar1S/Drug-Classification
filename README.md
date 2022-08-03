@@ -6,5 +6,5 @@
 
 ##### Step 3: After that, the flask app shows the features as input and gives the predicted drug as output.
 
-##### Step 4: Finally, the whole project is being docarized.
+##### Step 4: Finally, the whole project is being docarized and the docker container exists on the docker hub.
 
