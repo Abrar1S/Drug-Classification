@@ -6,6 +6,7 @@
 2. Data and model versioning are key to deployment. By using the DVC tool, data and model versioning have been performed.
 
 3. After that, the flask app shows the features as input and gives the predicted drug as output.
+
 ![drug_classification_app](https://github.com/user-attachments/assets/51357aae-434a-41a9-9125-021aa8ba89d1)
 
 
