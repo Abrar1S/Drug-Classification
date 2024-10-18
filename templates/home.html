@@ -43,33 +43,34 @@
   </head>
 
   <body>
-    <!-- <h3 align="center">Drug Classification App</h3> -->
-    <div style = "margin-top: 50px;" class="ui container">
-    <h3  class="ui center aligned header">Drug Classification App</h3>
+    <div style="margin-top: 50px;" class="ui container">
+    <h3 class="ui center aligned header">Drug Classification App</h3>
     
-      <form class = "ui form" action="{{ url_for("classification")}}" method="post">
+      <form class="ui form" action="{{ url_for('classification') }}" method="post">
         <div class="field">
           <label for="Age">Age:</label>
-          <input type="text" id="Age" name="Age" placeholder="Age"><br/><br/>
-          <label for="Sex">Sex(Female:0,Male:1):</label>
-          <input type="text" id="Sex" name="Sex" placeholder="Sex"><br/><br/>
-          <label for="BP">Blood Pressure(High:0,Low:1,Normal:2):</label>
-          <input type="text" id="BP" name="BP" placeholder="Blood Pressure"><br/><br/>
-          <label for="Cholesterol">Cholesterol(High:0,Low:1):</label>
-          <input type="text" id="Cholesterol" name="Cholesterol" placeholder="Cholesterol"><br/><br/>
+          <input type="text" id="Age" name="Age" value="{{ form_data.get('Age', '') }}" placeholder="Age"><br/><br/>
+          
+          <label for="Sex">Sex (Female: 0, Male: 1):</label>
+          <input type="text" id="Sex" name="Sex" value="{{ form_data.get('Sex', '') }}" placeholder="Sex"><br/><br/>
+          
+          <label for="BP">Blood Pressure (High: 0, Low: 1, Normal: 2):</label>
+          <input type="text" id="BP" name="BP" value="{{ form_data.get('BP', '') }}" placeholder="Blood Pressure"><br/><br/>
+          
+          <label for="Cholesterol">Cholesterol (High: 0, Low: 1):</label>
+          <input type="text" id="Cholesterol" name="Cholesterol" value="{{ form_data.get('Cholesterol', '') }}" placeholder="Cholesterol"><br/><br/>
+          
           <label for="Na_to_k">Na to potassium ratio:</label>
-          <input type="text" id="Na_to_k" name="Na_to_k" placeholder="Na_to_k"><br/><br/>
+          <input type="text" id="Na_to_k" name="Na_to_k" value="{{ form_data.get('Na_to_k', '') }}" placeholder="Na_to_k"><br/><br/>
 
-          <button class = "fluid ui teal button" type="submit">Classify Drugs</button>
+          <button class="fluid ui teal button" type="submit">Classify Drugs</button>
         </div>
       </form>
     
       <div>
-        <!-- check if result is None or not -->
-          {% if result is not none %}
-            <h3 class="ui center aligned header">Prediction says the drug is {{result}}</h3>
-          {% endif %}
-
+        {% if result is not none %}
+            <h3 class="ui center aligned header">Prediction says the drug is {{ result }}</h3>
+        {% endif %}
       </div>
     </div>
   </body>
