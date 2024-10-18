@@ -14,6 +14,7 @@ def classification():
 
     form_items = ['Age', 'Sex', 'BP', 'Cholesterol','Na_to_k']
     data = []
+    form_data = {}
     pred = None
     if request.method == "POST":
         # getting input with name = fname in HTML form
@@ -21,7 +22,8 @@ def classification():
             try:
                 temp = request.form.get(item)
                 temp = temp.strip()
-                temp = int(temp)
+                form_data[item] = temp  # Store the form data in a dictionary
+                #temp = int(temp)
                 data.append(temp)
             except Exception as ex:
                 print(ex)
@@ -38,7 +40,7 @@ def classification():
         elif pred[0] == 4:
             pred = "drugX"
 
-    return render_template("home.html", result=pred)
+    return render_template("home.html", result=pred, form_data=form_data)
 
 
 if __name__ == '__main__':
